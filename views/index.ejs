@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="app.css" />
-
-    <title>Document</title>
+    <%- include ("./partials/bootstraplink.ejs") %>
   </head>
   <body>
-    <h1>Stop forgetting and start listing!</h1>
-    <div class="allListInformationDisplay">
-      <% for (let i = 0; i < allListInformation.length; i++) { %>
-      <!-- <img
-        class="pictures"
-        src="<%=allListInformation[i].img; %>"
-        width="<%=200%>"
-      /> -->
-      <div class="allListInformation">
-        <a href="/list/<%=allListInformation[i].id%>">
-          <%=allListInformation[i].name; %>
-        </a>
-        <br />
-        <a href="/list/<%=allListInformation[i].id%>">
-          <%=allListInformation[i].date; %>
-        </a>
-      </div>
+    <div class="container">
+      <h1>Stop forgetting and start listing!</h1>
+      <div class="allListInformationDisplay">
+        <% for (let i = 0; i < allListInformation.length; i++) { %>
 
-      <form
-        action="/list/<%=allListInformation[i].id; %>?_method=DELETE"
-        method="POST"
-      >
-        <input class="deleteButton" type="submit" value="DELETE" />
-        <a href="/list/<%=allListInformation[i].id; %>/edit">Edit</a>
-      </form>
-      <br />
-      <%}%>
+        <div class="allListInformation">
+          <a href="/list/<%=allListInformation[i].id%>">
+            <%=allListInformation[i].name; %>
+          </a>
+          <br />
+          <a href="/list/<%=allListInformation[i].id%>">
+            <%=allListInformation[i].date; %>
+          </a>
+        </div>
+
+        <form
+          action="/list/<%=allListInformation[i].id; %>?_method=DELETE"
+          method="POST"
+        >
+          <input class="deleteButton" type="submit" value="DELETE" />
+          <a href="/list/<%=allListInformation[i].id; %>/edit">Edit</a>
+        </form>
+        <br />
+        <%}%>
+      </div>
+      <button><a href="list/new"> Create a new category!</a></button>
     </div>
-    <button><a href="list/new"> Create a new category!</a></button>
   </body>
 </html>

@@ -14,9 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 mongoose.connect("mongodb://localhost:27017/list").then(() => {
   console.log("The connection with mongod is established!!");
 });
-// mongoose.connect("mongodb://localhost:27017/list/listitem").then(() => {
-//   console.log("The connection with mongod is established!!");
-// });
+
 app.listen(3000, () => {
   console.log("Listen...");
 });
@@ -29,7 +27,6 @@ app.get("/seedlist", (request, response) => {
 
 app.get("/list", (request, response) => {
   SchemaListPage.find({}).then((allListInformation) => {
-    // console.log(allListInformation);
     response.render("index.ejs", {
       allListInformation: allListInformation,
     });
@@ -42,9 +39,13 @@ app.get("/list/new", (request, response) => {
 
 // The line of code below, is used to create the new category and bring user back to main page.
 app.post("/list", (request, response) => {
-  SchemaListPage.create(request.body).then(() => {
-    response.redirect("/list");
-  });
+  SchemaListPage.create(request.body)
+    .then(() => {
+      response.redirect("/list");
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/list/:id", (request, response) => {

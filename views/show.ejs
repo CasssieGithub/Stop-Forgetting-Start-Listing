@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <%- include ("./partials/bootstraplink.ejs") %>
   </head>
   <body>
-    <%=foundList.name%>
-    <br />
-    <% for (let i = 0; i < allListItemInformation.length; i++) {%>
-    <%=allListItemInformation[i].name; %>
-    <br />
-    <%=allListItemInformation[i].tags; %>
-    <br />
+    <div class="container">
+      <%=foundList.name%>
+      <br />
+      <% for (let i = 0; i < allListItemInformation.length; i++) {%>
+      <%=allListItemInformation[i].name; %>
+      <br />
+      <%=allListItemInformation[i].tags; %>
+      <br />
 
-    <form
-      action="/list/<%=allListItemInformation[i].id; %>/deleteitem?_method=DELETE"
-      method="POST"
-    >
-      <input class="deleteButton" type="submit" value="DELETE" />
+      <form
+        action="/list/<%=allListItemInformation[i].id; %>/deleteitem?_method=DELETE"
+        method="POST"
+      >
+        <input class="deleteButton" type="submit" value="DELETE" />
 
-      <a href="/list/<%=allListItemInformation[i].id; %>/edititem">Edit</a>
-    </form>
-    <% } %>
-    <a href="/list"> <button>Back to categories</button></a>
-    <a href="/list/<%=foundList.id;%>/newitem">
-      <button>Create another item for your grocery list!</button></a
-    >
+        <a href="/list/<%=allListItemInformation[i].id; %>/edititem">Edit</a>
+      </form>
+      <% } %>
+      <a href="/list"> <button>Back to categories</button></a>
+      <a href="/list/<%=foundList.id;%>/newitem">
+        <button>Create another item for your grocery list!</button></a
+      >
+    </div>
   </body>
 </html>
