@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>I found my listed item! Let's start editing!</h1>
+    <form
+      action="/list/<%=foundListItem.id%>/edititem?_method=PUT"
+      method="POST"
+    >
+      name: <input type="text" name="name" value="<%=foundListItem.name%>" />
+      <br />
+      <br />
+      tags: <input type="text" name="tags" value="<%=foundListItem.tags%>" />
+      <br />
+      <br />
+
+      <input type="submit" name="submitButton" value="Submit edit" />
+    </form>
+    <a href="/list/<%= foundListItem.listId%>"> <button>Back</button></a>
+  </body>
+</html>

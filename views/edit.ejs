@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit Your lists here</h1>
+      <form action="/list/<%=foundList.id%>?_method=PUT" method="POST">
+        Date: <input type="text" name="date" value="<%=foundList.date%>" />
+        <br />
+        <br />
+        Name:
+        <input type="text" name="name" value="<%=foundList.name%>" />
+        <br />
+        <br />
+
+        <input type="submit" name="submitButton" value="Submit Changes" />
+      </form>
+    </div>
+  </body>
+</html>

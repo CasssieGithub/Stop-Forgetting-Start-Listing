@@ -1,0 +1,8 @@
+.allListInformationDisplay {
+  display: flex;
+  flex-direction: column;
+}
+/* .allListInformation {
+  display: flex;
+  flex-direction: column;
+} */
