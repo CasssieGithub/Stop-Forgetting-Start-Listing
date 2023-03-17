@@ -2,21 +2,59 @@
 <html lang="en">
   <head>
     <%- include ("./partials/bootstraplink.ejs") %>
+    <!--  -->
+    <%- include ("./partials/fonts.ejs") %>
   </head>
   <body>
     <div class="container">
-      <h1>Let's create a new Category</h1>
-      <form action="/list" method="POST">
-        name:
-        <input type="text" name="name" placeholder="Category Required" />
+      <div class="containerTwo">
+        <h1 class="newCategoryHeading">Create a new category</h1>
+        <form class="newCategory" action="/list" method="POST">
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Name</span>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Category Required"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <br />
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Date </span>
+            <input
+              type="text"
+              name="date"
+              class="form-control"
+              placeholder="Optional"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <br />
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Image</span>
+            <input
+              type="text"
+              name="img"
+              class="form-control"
+              placeholder="Optional"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <br />
+          <div class="categoryBtns">
+            <input class="btn btn-primary" type="submit" value="Create" />
+            <a class="btn btn-primary" href="/list"> Back</a>
+          </div>
+        </form>
         <br />
-        Date: <input type="text" name="date" placeholder="Optional" />
-        <br />
-        Img: <input type="text" name="img" placeholder="Optional" />
-        <br />
-        <input type="submit" value="Create a new category" />
-      </form>
+      </div>
+      <br />
+      <%- include ("./partials/icons.ejs") %>
     </div>
-    <button><a href="/list"> Back</a></button>
   </body>
 </html>

@@ -1,3 +1,4 @@
+/* ===================This is the index page ================= */
 .allListInformationDisplay {
   display: flex;
   flex-wrap: wrap;
@@ -6,6 +7,7 @@
 .fs-1 {
   color: black;
   text-decoration: none;
+  font-family: "Playfair Display", serif;
 }
 .fs-1:hover {
   text-decoration: underline;
@@ -15,6 +17,7 @@
   text-align: center;
   margin-top: 70px;
   font-size: 60px;
+  font-family: "Playfair Display", serif;
 }
 .heading {
   text-align: center;
@@ -64,7 +67,9 @@
   background-color: transparent;
 }
 .theFooter {
-  margin-bottom: 125px;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-bottom: 25px;
   border-width: 1px;
   margin-top: 30px;
   text-align: center;
@@ -76,4 +81,77 @@
   border-right-color: rgb(0, 0, 0);
   border-bottom-color: rgb(0, 0, 0);
   border-left-color: rgb(0, 0, 0);
+}
+.fbicon {
+  font-size: 50px;
+  text-align: center;
+}
+.bi.bi-facebook {
+  margin-right: 15px;
+}
+.bi.bi-instagram {
+  margin-right: 15px;
+}
+.bi.bi-twitter {
+  margin-right: 15px;
+}
+/* ===================This is the create category page ================= */
+
+.newCategoryHeading {
+  font-family: "Playfair Display", serif;
+  padding-top: 50px;
+  font-size: 40px;
+}
+.input-group.mb-3 {
+  width: 50%;
+  border-color: black;
+}
+.containerTwo {
+  text-align: center;
+  background-color: #e1e1e0;
+}
+.containerTwoFooter {
+  text-align: center;
+  background-color: #e1e1e0;
+  height: 200px;
+}
+
+.newCategory {
+  font-family: "Playfair Display", serif;
+  padding-top: 50px;
+  width: 35%;
+  text-align: center;
+  margin: auto;
+}
+.categoryBtns {
+  text-align: right;
+}
+/* .partialforFooterIcons {
+  background-color: gray;
+} */
+
+@media only screen and (max-width: 770px) {
+  .newCategory {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 771px) {
+  .newCategory {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 990px) {
+  .newCategory {
+    width: 50%;
+  }
+}
+
+/* ==============This is the EDIT from the index.ejs page =========== */
+/* Example: Grocery, ToDo and house stuff list */
+
+.editListTitle {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  padding-top: 50px;
+  font-size: 40px;
 }

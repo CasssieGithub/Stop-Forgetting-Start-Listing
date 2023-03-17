@@ -2,25 +2,63 @@
 <html lang="en">
   <head>
     <%- include ("./partials/bootstraplink.ejs") %>
+    <!--  -->
+    <%- include ("./partials/fonts.ejs") %>
   </head>
   <body>
     <div class="container">
-      <h1>Edit Your lists here</h1>
-      <form action="/list/<%=foundList.id%>?_method=PUT" method="POST">
-        Date: <input type="text" name="date" value="<%=foundList.date%>" />
+      <div class="containerTwo">
+        <h1 class="editListTitle">Edit Your lists here</h1>
+        <form
+          class="newCategory"
+          action="/list/<%=foundList.id%>?_method=PUT"
+          method="POST"
+        >
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Date</span>
+            <input
+              type="text"
+              name="date"
+              class="form-control"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+              value="<%=foundList.date%>"
+            />
+          </div>
+          <br />
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Name </span>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+              value="<%=foundList.name%>"
+            />
+          </div>
+          <br />
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Image</span>
+            <input
+              type="text"
+              name="img"
+              class="form-control"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+              value="<%=foundList.img%>"
+            />
+          </div>
+          <br />
+          <div class="categoryBtns">
+            <input class="btn btn-primary" type="submit" value="Edit" />
+            <a class="btn btn-primary" href="/list"> Back</a>
+          </div>
+        </form>
         <br />
-        <br />
-        Name:
-        <input type="text" name="name" value="<%=foundList.name%>" />
-        <br />
-        <br />
-        Img:
-        <input type="text" name="img" value="<%=foundList.img%>" />
-        <br />
-        <br />
-
-        <input type="submit" name="submitButton" value="Submit Changes" />
-      </form>
+      </div>
+      <br />
+      <%- include ("./partials/icons.ejs") %>
     </div>
   </body>
 </html>
