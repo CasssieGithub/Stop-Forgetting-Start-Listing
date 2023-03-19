@@ -5,16 +5,45 @@
   </head>
   <body>
     <div class="container">
-      <h1>Welcome new item!</h1>
-      <form action="/list/<%=foundList.id%>/newitem" method="POST">
-        New Item: <input type="text" name="name" />
+      <div class="containerTwo">
+        <h1 class="newCategoryHeading">Create a new item</h1>
+        <form
+          class="newCategory"
+          action="/list/<%=foundList.id%>/newitem"
+          method="POST"
+        >
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Item:</span>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <br />
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Notes: </span>
+            <input
+              type="text"
+              name="tags"
+              class="form-control"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <br />
+          <div class="categoryBtns">
+            <input class="btn btn-primary" type="submit" value="submit" />
+            <a class="btn btn-primary" href="/list/<%=foundList.id%>/"> Back</a>
+          </div>
+        </form>
         <br />
-        <br />
-        Notes: <input type="text" name="tags" />
-        <br />
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
+      </div>
     </div>
+    <br />
+    <br />
+    <%- include ("./partials/icons.ejs") %>
   </body>
 </html>

@@ -2,24 +2,55 @@
 <html lang="en">
   <head>
     <%- include ("./partials/bootstraplink.ejs") %>
+    <!--  -->
+    <%- include ("./partials/fonts.ejs") %>
   </head>
   <body>
     <div class="container">
-      <h1>I found my listed item! Let's start editing!</h1>
-      <form
-        action="/list/<%=foundListItem.id%>/edititem?_method=PUT"
-        method="POST"
-      >
-        name: <input type="text" name="name" value="<%=foundListItem.name%>" />
+      <div class="containerTwo">
+        <h1 class="editListTitle">Edit your lists here</h1>
+        <form
+          class="newCategory"
+          action="/list/<%=foundListItem.id%>/edititem?_method=PUT"
+          method="POST"
+        >
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Name</span>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+              value="<%=foundListItem.name%>"
+            />
+          </div>
+          <br />
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Tags </span>
+            <input
+              type="text"
+              name="tags"
+              class="form-control"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+              value="<%=foundListItem.tags%>"
+            />
+          </div>
+          <br />
+          <div class="categoryBtns">
+            <input class="btn btn-primary" type="submit" value="Submit" />
+            <a class="btn btn-primary" href="/list/<%= foundListItem.listId%>">
+              Back</a
+            >
+          </div>
+        </form>
         <br />
-        <br />
-        tags: <input type="text" name="tags" value="<%=foundListItem.tags%>" />
-        <br />
-        <br />
+      </div>
+      <br />
+      <br />
 
-        <input type="submit" name="submitButton" value="Submit edit" />
-      </form>
-      <a href="/list/<%= foundListItem.listId%>"> <button>Back</button></a>
+      <%- include ("./partials/icons.ejs") %>
     </div>
   </body>
 </html>

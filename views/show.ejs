@@ -4,28 +4,78 @@
     <%- include ("./partials/bootstraplink.ejs") %>
   </head>
   <body>
+    <!-- ===============================New Code ======================================== -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/list"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/list/new">Create a new category</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- ===============================New Code ======================================== -->
     <div class="container">
-      <%=foundList.name%>
-      <br />
-      <% for (let i = 0; i < allListItemInformation.length; i++) {%>
-      <%=allListItemInformation[i].name; %>
-      <br />
-      <%=allListItemInformation[i].tags; %>
-      <br />
+      <div class="containerForLists">
+        <div class="titleOnListPages">
+          <%=foundList.name%>
+          <br />
+        </div>
+        <table class="table table-hover">
+          <% for (let i = 0; i < allListItemInformation.length; i++) {%>
+          <tr>
+            <td class="paddingForTableData">
+              <%=allListItemInformation[i].name; %>
+              <%=allListItemInformation[i].tags; %>
+            </td>
+            <td class="paddingForTableData">
+              <form
+                class="deleteandEditBtn"
+                action="/list/<%=allListItemInformation[i].id; %>/deleteitem?_method=DELETE"
+                method="POST"
+              >
+                <input class="deleteButton" type="submit" value="Delete" />
 
-      <form
-        action="/list/<%=allListItemInformation[i].id; %>/deleteitem?_method=DELETE"
-        method="POST"
-      >
-        <input class="deleteButton" type="submit" value="DELETE" />
+                <a
+                  class="editBtn"
+                  href="/list/<%=allListItemInformation[i].id; %>/edititem"
+                  >Edit</a
+                >
+              </form>
+              <% } %>
+            </td>
+          </tr>
+        </table>
 
-        <a href="/list/<%=allListItemInformation[i].id; %>/edititem">Edit</a>
-      </form>
-      <% } %>
-      <a href="/list"> <button>Back to categories</button></a>
-      <a href="/list/<%=foundList.id;%>/newitem">
-        <button>Create another item for your grocery list!</button></a
-      >
+        <br />
+        <div class="categoryBtns">
+          <a class="btn btn-primary" href="/list/<%=foundList.id;%>/newitem">
+            Add a new item
+          </a>
+          <a class="btn btn-primary" href="/list">Back to categories</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
+
+<!-- ================================================== -->
