@@ -1,18 +1,37 @@
-README.md
+# Welcome to my List App
 
-The technology I used for my application were:
+## Table of Contents
+- Description
+- Pictures
+- Technology Used
+- Installation Instructions
 
+
+## Description
+Forgetful much? Well, you're in luck! Introducing the list app. This application gives you the ability to create, edit and delete a category (ex. Grocery list, school supply list). In addition access your list of items which you could create, edit or delete them. 
+
+
+## Pictures
+
+*** will enter photos when I'm done ***
+
+
+
+## Technology Used
 1. Javascript
 2. HTML
 3. CSS
-4. BootStrap
-5. Node.js
-6. Express
-7. MongoDB/Mongoose
-8. EJS
+4. Node.js
+5. Express
+6. MongoDB/Mongoose
+7. EJS
 
-Day one of my project, I created a wire frame and broke down the process step-by-step of what I would like to accomplish. Throughout my project, I altered the wire frame to suit what I wanted. I didn't have any unsolved problems while making my project.
 
-- Note to self in my future project, add (possibly) a login feature and a right side navigation bar to navitate while you are under the listed items (grocery list, todo list, etc.,)
+## Installation Instructions
+1. Clone my repository git@github.com:CasssieGithub/Stop-Forgetting-Start-Listing.git
+2. cd into Stop-Forgetting-Start-Listing
+3. npm install
+4. npm start
 
 Link to my live site:
+*** will attach link once deployed *** 
