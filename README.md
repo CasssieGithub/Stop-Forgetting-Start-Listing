@@ -8,7 +8,7 @@
 
 
 ## Description
-Forgetful much? Well, you're in luck! Introducing the list app. This application gives you the ability to create, edit and delete a category (ex. Grocery list, school supply list). In addition access your list of items which you could create, edit or delete them. 
+Forgetful much? Well, you're in luck! Introducing the List app. This application gives you the ability to create, edit and delete a category (ex. Grocery list, school supply list). In addition, access your list of items which you could also create, edit or delete. Hope you enjoy! 
 
 
 ## Pictures
