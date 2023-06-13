@@ -43,8 +43,9 @@ Forgetful much? Well, you're in luck! Introducing the List app. This application
 ## Installation Instructions
 1. Clone my repository git@github.com:CasssieGithub/Stop-Forgetting-Start-Listing.git
 2. cd into Stop-Forgetting-Start-Listing
-3. npm install
+3. npm install 
 4. npm start
+5. Paste link into brower: http://localhost:3000/list
 
 Link to my live site:
 *** will attach link once deployed *** 
